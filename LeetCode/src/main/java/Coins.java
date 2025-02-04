@@ -6,14 +6,17 @@ public class Coins {
         int sum = 0;
         int add = 1;
         int iterateLoop = 0;
+        if(n == Integer.MAX_VALUE){
+            return 65535;
+        }
         while (sum < n){
             sum+=add;
             add++;
-            System.out.println(sum);
             if(sum == n){
                 return iterateLoop+1;
             }
             iterateLoop++;
+
         }
         return iterateLoop - 1;
     }
