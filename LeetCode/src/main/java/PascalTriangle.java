@@ -38,7 +38,7 @@ public class PascalTriangle {
 
     public static void main(String[] args) {
         PascalTriangle pascalTriangle = new PascalTriangle();
-        System.out.println(pascalTriangle.generate(6));
+        System.out.println(pascalTriangle.generate(10));
 
 
     }
