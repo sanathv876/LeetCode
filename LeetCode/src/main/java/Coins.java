@@ -7,7 +7,8 @@ public class Coins {
         int add = 1;
         int iterateLoop = 0;
         if(n == Integer.MAX_VALUE){
-            return 65535;
+            int ans = 65535;
+            return ans;
         }
         while (sum < n){
             sum+=add;
