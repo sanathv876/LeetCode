@@ -3,22 +3,27 @@ import java.util.Arrays;
 public class MoveZeroes {
     public void moveZeroes(int[] nums) {
         int temp = 0;
-        for(int i =0; i < nums.length; i ++){
-            if(nums[i] == 0){
-                if(i == 0) {
-                    temp = nums[nums.length - 1 - i];
-                    nums[nums.length - 1 - i] = nums[i];
-                    nums[i] = temp;
-                }else{
-                    temp = nums[nums.length - i];
-                    nums[nums.length - i] = nums[i];
-                    nums[i] = temp;
+        int start = 0;
+        int end = nums.length -1;
 
+        while(start < end){
+            if(temp == end) {
+                end--;
+                if(nums[end+ 1] !=0){
+                    break;
                 }
-
+                temp = 0;
+            }
+            if(nums[temp] == 0){
+                int swap = nums[temp];
+                nums[temp] = nums[temp+1];
+                nums[temp+ 1] = swap;
+                temp++;
+            }else{
+                temp++;
             }
         }
-        System.out.println(Arrays.toString(nums));
+        //System.out.println(Arrays.toString(nums));
 
 
     }

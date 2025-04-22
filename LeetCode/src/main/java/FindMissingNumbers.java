@@ -5,18 +5,20 @@ import java.util.List;
 
 public class FindMissingNumbers {
     public List<Integer> findDisappearedNumbers(int[] nums) {
-        Arrays.sort(nums);
-        String number = String.join(" ",Arrays.toString(nums));
-        List<Integer> missingNums = new ArrayList<>();
-        int i = 1;
-        while(i <= nums.length){
-            if(!number.contains(Integer.toString(i))){
-                missingNums.add(i);
-            }
-            i++;
+        List<Integer> arrList = new ArrayList<>();
+        List<Integer> ans = new ArrayList<>();
+        for(int x :nums){
+            arrList.add(x);
         }
-        return missingNums;
+        for(int i = 1; i <= nums.length; i ++){
+            if(arrList.contains(i)){
+                continue;
+            }else{
+                ans.add(i);
 
+            }
+        }
+        return ans;
     }
 
 
