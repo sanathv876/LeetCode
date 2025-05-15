@@ -1,12 +1,18 @@
 
 
 public class HappyNumber {
+    int num;
     public boolean isHappy(int n) {
-        if( n == 1){
-            return true;
-        }else if(n == 4){
+        System.out.println(n);
+        if (num == 0) {
+            num = n;
+        } else if (num %2 == 0){
             return false;
         }
+        if( n == 1){
+            return true;
+        }
+
         boolean happy;
         int sum = 0;
         String numStr = Integer.toString(n);
@@ -29,6 +35,6 @@ public class HappyNumber {
     public static void main(String[] args) {
         HappyNumber h = new HappyNumber();
 
-        System.out.println(h.isHappy(4));
+        System.out.println(h.isHappy(18));
     }
 }
